@@ -7,7 +7,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
         <base target="_top">
-        
+<audio loop autoplay autoplay="true" height="0" width="0" id="music1" autoplay="autoplay" autoplay loop preload="auto" type="audio/mpeg">
+    <source src="https://webappschools.github.io/SOUND/Around-The-World.mp3" type="audio/mp3">
+</audio>
+
+    <script>
+        var audio = document.getElementById("music1");
+        var btn = document.getElementById("btnPause");
+        function PausePlay() {
+            if (audio.paused) {
+                audio.play();
+                document.getElementById("btnPause").innerHTML = "🎵";
+            } else if (audio.ended) {
+                audio.currentTime = 0;
+                audio.play();
+                document.getElementById("btnPause").innerHTML = "🎵";
+            }
+            else {
+                audio.pause();
+                document.getElementById("btnPause").innerHTML = "🎶";
+            }
+        }
+    </script>         
 <script>
 document.getElementById('warning').style.display = 'none';
 </script>
